@@ -53,3 +53,13 @@ border-left: 4px solid #0077cc;
 background-color: #f0f8ff;
 font-size: 0.95rem;
 }
+
+.load-button {
+  background-color: blue;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+}

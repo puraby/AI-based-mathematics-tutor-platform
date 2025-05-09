@@ -8,24 +8,6 @@
   overflow-x: hidden; /* Prevents horizontal overflow */
 }
 
-.tab-menu {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.tab-menu button {
-  padding: 10px;
-  cursor: pointer;
-  border: none;
-  background-color: #ddd;
-}
-
-.tab-menu button.active {
-  background-color: rgb(0, 21, 255);
-  font-weight: bold;
-}
-
 .selection-container {
   display: flex;
   flex-wrap: wrap;
@@ -102,4 +84,63 @@
   .navigation-buttons button {
       width: 100%;
   }
+}
+
+
+.stats-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 20px;
+  margin-bottom: 2rem;
+}
+
+.stats-table th,
+.stats-table td {
+  border: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+
+.stats-table th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+.stats-table th:nth-child(1),
+.stats-table td:nth-child(1) {
+  width: 50%; 
+  text-align: left;
+}
+
+.stats-table th:nth-child(2),
+.stats-table th:nth-child(3),
+.stats-table th:nth-child(4),
+.stats-table td:nth-child(2),
+.stats-table td:nth-child(3),
+.stats-table td:nth-child(4) {
+  width: 16.6%;
+}
+
+
+.tab-button {
+  padding: 0.5rem 1.5rem;
+  margin-right: 0.5rem;
+  font-size: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+.view-back-button {
+  background-color: blue;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
 }

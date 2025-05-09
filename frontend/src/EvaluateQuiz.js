@@ -244,6 +244,11 @@ function EvaluateQuiz() {
                 setSelectedAttempt(selectedOption);
                 setUsername(selectedOption.username);
                 setExamId(selectedOption.student_exam_id);
+
+                setQuizData([]);
+                setAnswers({});
+                setCurrentQuestionIndex(0);
+
             }}
             >
             <option value="">Select Attempt</option>
@@ -253,7 +258,7 @@ function EvaluateQuiz() {
                 </option>
             ))}
             </select>
-            <button onClick={handleLoadExam} disabled={!examId}>
+            <button className="load-button" onClick={handleLoadExam} disabled={!examId}>
             Load Exam
             </button>
 
@@ -277,13 +282,16 @@ function EvaluateQuiz() {
             ) : (
               <>
                 <div className="quiz-header">
-                  <h3>{`Question ${currentQuestionIndex + 1}: ${quizData[currentQuestionIndex].question}`}</h3>
+                  <h3>{`Question ${currentQuestionIndex + 1}:`}</h3>
+                  <h3>{` ${quizData[currentQuestionIndex].question}`}</h3>
                 </div>
 
                 <div className="options">
                   {renderInputForQuestion(quizData[currentQuestionIndex], currentQuestionIndex)}
                   
                   <div className="question-feedback">
+                    <label><strong>Correct Answer:</strong></label>
+                    <div style={{marginLeft:"5px"}}>{quizData[currentQuestionIndex].correct_answer || 'N/A'} </div>
                     <label><strong>Acquired Mark / Assigned Score:</strong></label>
                     <input
                         type="number"

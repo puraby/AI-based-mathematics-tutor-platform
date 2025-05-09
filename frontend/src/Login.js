@@ -60,7 +60,8 @@ const Login = ({ setIsAuthenticated }) => {
         navigate('/platform');
       } else {
         const errorData = await response.json();
-        setErrorMessage(errorData.detail || 'Invalid username or password');
+
+        setErrorMessage(errorData.error || 'Invalid username or password');
       }
     } catch (error) {
       setErrorMessage('There was an error connecting to the backend');
